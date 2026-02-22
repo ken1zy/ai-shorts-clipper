@@ -16,5 +16,6 @@ class Config(BaseSettings):
     )
 
     GEMINI_API_KEY: str = ""
+    GEMINI_MODEL: str = "gemini-2.0-flash"
     DEFAULT_TARGET_LUFS: float = -14.0
     MIN_START_OFFSET: float = 12.0
