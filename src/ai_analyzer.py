@@ -28,8 +28,9 @@ MAX_UPLOAD_WAIT_SEC = 600.0
 class ClipResponse(BaseModel):
     """Ответ модели — один лучший клип."""
 
-    start_time: float = Field(..., description="Начало в секундах")
-    end_time: float = Field(..., description="Конец в секундах")
+    # gt=0 уходит в JSON Schema как exclusiveMinimum — SDK Google иногда падает на этом
+    start_time: float = Field(..., gt=0, description="Начало в секундах")
+    end_time: float = Field(..., gt=0, description="Конец в секундах")
     description: str = Field(..., min_length=1)
     viral_score: int = Field(..., ge=1, le=10)
 
