@@ -20,3 +20,4 @@ class Config(BaseSettings):
     GEMINI_PROXY_HEIGHT: int = 480
     DEFAULT_TARGET_LUFS: float = -14.0
     MIN_START_OFFSET: float = 12.0
+    MIN_VIRAL_SCORE: int = 8
